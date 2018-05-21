@@ -38,8 +38,12 @@ namespace Treehouse.FitnessFrog.Controllers
 
             return View(entries);
         }
-
         public ActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost, ActionName("Add")]
+        public ActionResult AddPost()
         {
             return View();
         }
