@@ -28,7 +28,7 @@
         /// <param name="activityType">The activity type for the activity.</param>
         /// <param name="name">The name for the activity.</param>
         public Activity(ActivityType activityType, string name = null)
-        {
+        {            
             Id = (int)activityType;
 
             // If we don't have a name argument, 
