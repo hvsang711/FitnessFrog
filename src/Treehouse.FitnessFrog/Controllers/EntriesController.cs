@@ -50,8 +50,7 @@ namespace Treehouse.FitnessFrog.Controllers
             Entry.IntensityLevel? intensity,
             bool? exclude,
             string notes)
-        {            
-
+        {               
             ViewBag.Date = date;
             ViewBag.ActivityId = activityId;
             ViewBag.Duration = duration;
