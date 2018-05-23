@@ -57,7 +57,7 @@ namespace Treehouse.FitnessFrog.Controllers
             if (ModelState.IsValid)
             {
                 _entriesRepository.AddEntry(entry);
-
+                TempData["Message"] = "Your entry was successfully added!";
                 return RedirectToAction("Index");
             }
             ViewBag.ActivitiesSelectListItems = new SelectList(Data.Data.Activities, "Id", "Name");
@@ -96,7 +96,7 @@ namespace Treehouse.FitnessFrog.Controllers
             if (ModelState.IsValid)
             {
                 _entriesRepository.UpdateEntry(entry);
-
+                TempData["Message"] = "Your entry was successfully updated";
                 return RedirectToAction("Index");
             }
             //TODO Populate the activities select list items Viewbag property.
@@ -104,6 +104,7 @@ namespace Treehouse.FitnessFrog.Controllers
 
             return View(entry);
         }
+
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -122,6 +123,7 @@ namespace Treehouse.FitnessFrog.Controllers
         {
             //TODO delete the entry
             _entriesRepository.DeleteEntry(id);
+            TempData["Message"] = "Your entry was successfully deleted";
             //TODO redirect to the 'Entries' list page.
             return RedirectToAction("Index");
         }
